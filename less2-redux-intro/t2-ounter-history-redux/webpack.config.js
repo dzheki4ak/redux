@@ -6,10 +6,9 @@ const webpack = require('webpack');
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   const config = {
-    entry: './src/index.jsx',
+    entry: './src/index.js',
     output: {
       filename: 'bundle.js',
-      publicPath: '/',
     },
     module: {
       rules: [
@@ -27,6 +26,9 @@ module.exports = (env, argv) => {
         },
       ],
     },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
@@ -34,12 +36,8 @@ module.exports = (env, argv) => {
         template: './src/index.html',
       }),
     ],
-    resolve: {
-      extensions: ['.js', '.jsx'],
-    },
     devServer: {
       hot: true,
-      historyApiFallback: true,
     },
   };
 
