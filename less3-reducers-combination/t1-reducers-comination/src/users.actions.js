@@ -14,7 +14,7 @@ export const addUser = userData => {
 export const deleteUser = userId => {
   return {
     type: DELETE_USER,
-    payload: { userId },
+    payload: userId,
   };
 };
 
