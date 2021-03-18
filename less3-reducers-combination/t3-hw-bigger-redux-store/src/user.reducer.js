@@ -6,10 +6,8 @@ export const userReducer = (state = null, action) => {
       return action.payload;
 
     case USER_DEL:
-      return {
-        user: null,
-      };
-
+      return null;
+      
     default:
       return state;
   }
