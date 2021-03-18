@@ -1,6 +1,10 @@
 import { LANG_SETTER } from './language.actions';
 
-export const languageReducer = (state = 'en', action) => {
+const initState = {
+  language: 'en'
+}
+
+export const languageReducer = (state = initState.language, action) => {
   switch (action.type) {
     case LANG_SETTER:
       return {
