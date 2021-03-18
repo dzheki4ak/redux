@@ -10,4 +10,6 @@ const appReducer = combineReducers({
   cart: cartReducer ,
 });
 
-export const store = createStore(appReducer);
+const store = createStore(appReducer);
+
+export default store;
