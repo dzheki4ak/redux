@@ -56,6 +56,7 @@ export const users = [
     age: 45,
     name: 'Anna',
   },
+  
 ];
 
 export const userPageReducer = (state = 0, action) => {

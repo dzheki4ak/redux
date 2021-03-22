@@ -6,9 +6,9 @@ import * as usersActions from './users.actions';
 import { connect } from 'react-redux';
 
 const UsersList = ({ usersList, currentPage, goNext, goPrev }) => {
-
   const itemsPerPage = 3;
-  const start = currentPage * itemsPerPage
+  const start = currentPage * itemsPerPage;
+
   const listToRender = usersList.slice(start, start + itemsPerPage);
 
   return (
@@ -21,9 +21,9 @@ const UsersList = ({ usersList, currentPage, goNext, goPrev }) => {
         itemsPerPage={itemsPerPage}
       />
       <ul className="users">
-        <User
-          users={listToRender}
-        />
+        {listToRender.map(user => (
+          <User key={user.id} name={user.name} age={user.age} />
+        ))}
       </ul>
     </div>
   );
