@@ -1,17 +1,14 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import Users from './users/Users';
+import UsersList from './Users/UsersList';
 
 import { Provider } from 'react-redux';
 
-import store from './';
-
-
+import store from './Users/store';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Users />
+      <UsersList />
     </Provider>
   );
 };
