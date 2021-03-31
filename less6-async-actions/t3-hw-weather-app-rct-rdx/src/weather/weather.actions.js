@@ -11,7 +11,7 @@ export const cityWeatherAction = listOfCities => {
   };
 };
 
-export const getCityWeatherData = () => {
+export const getWeatherData = () => {
   return function (dispatch) {
     getCitiesList().then(data => dispatch(cityWeatherAction(data)));
   };

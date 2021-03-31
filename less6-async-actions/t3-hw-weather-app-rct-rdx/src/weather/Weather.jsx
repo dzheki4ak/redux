@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getCityWeatherData } from './weather.actions';
+import { getWeatherData } from './weather.actions';
 import { weatherListSelector } from './weather.selectors';
 
 class Weather extends Component {
@@ -36,7 +36,7 @@ const mapState = state => {
 };
 
 const mapDispatch = {
-  getCitiesWeather: getCityWeatherData,
+  getCitiesWeather: getWeatherData,
 };
 
 export default connect(mapState, mapDispatch)(Weather);
