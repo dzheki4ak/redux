@@ -5,30 +5,16 @@ import {
   compose,
 } from 'redux';
 import thunk from 'redux-thunk';
+import { wetherReducer } from './weather/weather.reducer';
 
-/*
-import usersReducer from './users/users.reducer';
-
-const reducer = combineReducers({
-  users: usersReducer,
-});
-
-const logger = store => next => action => {
-  console.group(action.type);
-  console.info('dispatching', action);
-  let result = next(action);
-  console.log('next state', store.getState());
-  console.groupEnd();
-  return result;
-}
+const activeReducer = combineReducers({ weather: wetherReducer });
 
 const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
-  reducer,
-  composeEnhancers(applyMiddleware(thunk, logger)),
+const weatherStore = createStore(
+  activeReducer,
+  composeEnhancers(applyMiddleware(thunk)),
 );
 
-export default store;
-*/
+export default weatherStore;
