@@ -1,8 +1,7 @@
 import React from 'react';
 import className from 'classnames';
 
-const Task = ({ id, done, text, onChange, onDelete }) => {
-  return (
+const Task = ({ id, done, text, onChange, onDelete }) => (
     <li className={className('list-item', { 'list-item_done': done })}>
       <input
         type="checkbox"
@@ -17,6 +16,5 @@ const Task = ({ id, done, text, onChange, onDelete }) => {
       ></button>
     </li>
   );
-};
 
 export default Task;

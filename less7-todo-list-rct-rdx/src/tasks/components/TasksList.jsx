@@ -33,11 +33,9 @@ const TasksList = ({
   );
 };
 
-const mapState = state => {
-  return {
+const mapState = state => ({
     tasks: sortedTasksListSelector(state),
-  };
-};
+  });
 
 const mapDispatch = {
   getTaskList: tasksAction.getTaskList,
